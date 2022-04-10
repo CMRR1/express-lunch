@@ -6,3 +6,10 @@ margin-bottom: 16px;
 color: #172940; 
 text-align: center;
 }
+
+.button-trash{    
+    background-repeat:no-repeat;
+    border: none; 
+    background-color: Transparent;
+    color: #EE7F7B;
+}

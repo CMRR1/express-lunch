@@ -3,19 +3,11 @@ import React from 'react';
 import Navbar from "./components/Navbar/Navbar";
 import Platillo from "./components/Platillo/Platillo";
 import Carrito from "./components/Carrito/Carrito";
+import { Container } from 'react-bootstrap';
 
 function App() {
   const [filtro, setFiltro] = React.useState({ b: true, l: true, s: true });
   function updateFiltro(index) {
-    // if (index !== -1) {
-    //   let filtros = [...filtro];
-    //   filtros.forEach(element => {
-    //     element = false;
-    //   });
-    //   filtros[index] = true;
-    //   console.log(filtros);
-    //   setFiltro(filtros);
-    //   console.log(filtro);
     let filtros = { b: false, l: false, s: false };
     switch (index) {
       case 0:
@@ -36,17 +28,18 @@ function App() {
   }
   //}
   React.useEffect(() => {
-    console.log('Fruit', filtro);
   }, [filtro])
 
   return (
     <div className="App">
-
       <Navbar updateFiltro={updateFiltro} />
-      <br />
-      <br />
-      <br />
-      <Platillo  filtro={filtro}/>
+      <Container>
+        <br />
+        <br />
+        <br />
+        <Platillo filtro={filtro} />
+
+      </Container>
       <Carrito />
     </div>
   );

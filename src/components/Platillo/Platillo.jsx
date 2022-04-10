@@ -18,7 +18,7 @@ const Index = (props) => {
                             </Col>
                             <div className='card-title' style={{ border: 'solid', borderLeft: '0px', borderRight: '0px', borderTop: '0px', borderWidth: '2px', borderColor: '#f3f3fb' }}>
                                 <Card.Title><strong>{i.title}</strong></Card.Title>
-                                <h5 style={{ color: '#bd9158', float: 'right', marginLeft: '32%' }}><strong> ${i.price}</strong></h5>
+                                <h5 style={{ color: '#bd9158', float: 'right', marginLeft: '22%' }}><strong> ${i.price}</strong></h5>
                             </div>
                             <Card.Text style={{ color: '#6c8099' }}>
                                 {i.description}
@@ -43,7 +43,7 @@ const Index = (props) => {
                             </Col>
                             <div className='card-title' style={{ border: 'solid', borderLeft: '0px', borderRight: '0px', borderTop: '0px', borderWidth: '2px', borderColor: '#f3f3fb' }}>
                                 <Card.Title><strong>{i.title}</strong></Card.Title>
-                                <h5 style={{ color: '#bd9158', float: 'right', marginLeft: '32%' }}><strong> ${i.price}</strong></h5>
+                                <h5 style={{ color: '#bd9158', float: 'right', marginLeft: '22%' }}><strong> ${i.price}</strong></h5>
                             </div>
                             <Card.Text style={{ color: '#6c8099' }}>
                                 {i.description}
@@ -68,7 +68,7 @@ const Index = (props) => {
                             </Col>
                             <div className='card-title' style={{ border: 'solid', borderLeft: '0px', borderRight: '0px', borderTop: '0px', borderWidth: '2px', borderColor: '#f3f3fb' }}>
                                 <Card.Title><strong>{i.title}</strong></Card.Title>
-                                <h5 style={{ color: '#bd9158', float: 'right', marginLeft: '32%' }}><strong> ${i.price}</strong></h5>
+                                <h5 style={{ color: '#bd9158', float: 'right', marginLeft: '22%' }}><strong> ${i.price}</strong></h5>
                             </div>
                             <Card.Text style={{ color: '#6c8099' }}>
                                 {i.description}
