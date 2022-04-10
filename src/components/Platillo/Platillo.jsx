@@ -5,8 +5,15 @@ import { menudata } from '../../static/data/menu';
 
 
 const Index = (props) => {
+
+    function agregar(comida) {
+        let carrito= JSON.parse(localStorage.getItem("carrito"));
+        carrito.push(comida);
+        localStorage.setItem("carrito",JSON.stringify(carrito));
+        props.updateCarrito();
+    }
     const breakfast = menudata.breakfast.map(i =>
-        <Col md={4} style={{ width: '38em', marginBottom: '2em', marginLeft: '0' }}>
+        <Col md={4} style={{ width: '38rem', marginLeft: '0', padding: '32px' }}>
             <Card className="border-0">
                 <Row>
                     <Col sm={4} className="border-bottom-1">
@@ -23,7 +30,7 @@ const Index = (props) => {
                             <Card.Text style={{ color: '#6c8099' }}>
                                 {i.description}
                             </Card.Text>
-                            <button className='card-button'>Add</button>
+                            <button className='card-button' onClick={() => agregar(i)}>Add</button>
                         </Card.Body>
                     </Col>
                 </Row>
@@ -31,7 +38,7 @@ const Index = (props) => {
         </Col>
     );
     const lunch = menudata.lunch.map(i =>
-        <Col md={4} style={{ width: '38em', marginBottom: '2em' }}>
+        <Col md={4} style={{ width: '38rem', padding: '32px'  }}>
             <Card className="border-0">
                 <Row>
                     <Col sm={4} className="border-bottom-1">
@@ -48,7 +55,7 @@ const Index = (props) => {
                             <Card.Text style={{ color: '#6c8099' }}>
                                 {i.description}
                             </Card.Text>
-                            <button className='card-button'>Add</button>
+                            <button className='card-button' onClick={() => agregar(i)}>Add</button>
                         </Card.Body>
                     </Col>
                 </Row>
@@ -56,7 +63,7 @@ const Index = (props) => {
         </Col>
     );
     const shakes = menudata.shakes.map(i =>
-        <Col md={4} style={{ width: '38em', marginBottom: '2em' }}>
+        <Col md={4} style={{ width: '38rem',  padding: '32px' }}>
             <Card className="border-0">
                 <Row>
                     <Col sm={4} className="border-bottom-1">
@@ -73,7 +80,7 @@ const Index = (props) => {
                             <Card.Text style={{ color: '#6c8099' }}>
                                 {i.description}
                             </Card.Text>
-                            <button className='card-button'>Add</button>
+                            <button className='card-button' onClick={() => agregar(i)}>Add</button>
                         </Card.Body>
                     </Col>
                 </Row>

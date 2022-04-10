@@ -1,7 +1,7 @@
 .card-title{
     display: flex;
     color: #172940; 
-    min-width: 10em;
+    min-width: 10rem;
 }
 
 .img{

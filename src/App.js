@@ -6,6 +6,13 @@ import Carrito from "./components/Carrito/Carrito";
 import { Container } from 'react-bootstrap';
 
 function App() {
+
+  let data = JSON.parse(localStorage.getItem("carrito"));
+  if (data == null) {
+    data = [];
+    localStorage.setItem("carrito", JSON.stringify(data));
+  }
+
   const [filtro, setFiltro] = React.useState({ b: true, l: true, s: true });
   function updateFiltro(index) {
     let filtros = { b: false, l: false, s: false };
@@ -30,6 +37,11 @@ function App() {
   React.useEffect(() => {
   }, [filtro])
 
+  const [carrito, setCarrito] = React.useState(data);
+  function updateCarrito() {
+    let data = JSON.parse(localStorage.getItem("carrito"));
+    setCarrito(data);
+  }
   return (
     <div className="App">
       <Navbar updateFiltro={updateFiltro} />
@@ -37,10 +49,12 @@ function App() {
         <br />
         <br />
         <br />
-        <Platillo filtro={filtro} />
+        <Platillo filtro={filtro}
+          updateCarrito={updateCarrito} />
 
       </Container>
-      <Carrito />
+      <Carrito updateCarrito={updateCarrito}
+        carrito={carrito} />
     </div>
   );
 }
